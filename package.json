@@ -3,10 +3,16 @@
   "version": "1.0.8",
   "description": "",
   "main": "index.js",
+  "types": "./index.js",
   "keywords": [
-    "calculator","date","age"
+    "calculator",
+    "date",
+    "age"
   ],
   "author": "Ashak Zahin Hasan <azahinhasan@gmail.com>",
   "license": "MIT",
-  "repository": "azahinhasan/age_calculator_npm_package"
+  "repository": "azahinhasan/age_calculator_npm_package",
+  "compilerOptions": {
+    "declaration": true
+  }
 }
