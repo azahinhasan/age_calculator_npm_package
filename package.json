@@ -1,14 +1,14 @@
 {
-  "name": "test-package",
-  "version": "1.0.0",
+  "name": "@azahinhasan/age-calculator",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "test-package"
+    "age-calculator"
   ],
   "author": "zahin",
-  "license": "ISC"
+  "license": "MIT"
 }
