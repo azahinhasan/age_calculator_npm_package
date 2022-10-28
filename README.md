@@ -1,1 +1,1 @@
-# age_calculator_npm_package
+### By using of this package you can find out Age from DOB , DOB from age or difference between two date

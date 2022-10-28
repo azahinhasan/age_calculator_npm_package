@@ -9,6 +9,7 @@
   "keywords": [
     "age-calculator"
   ],
-  "author": "zahin",
-  "license": "MIT"
+  "author": "Ashak Zahin Hasan <azahinhasan@gmail.com>",
+  "license": "MIT",
+  "repository": "azahinhasan/age_calculator_npm_package"
 }

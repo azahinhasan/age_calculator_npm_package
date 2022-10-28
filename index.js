@@ -1,10 +1,3 @@
-function packageTest() {
-  return "hello";
-}
-
-const packageTest2 = (s) => {
-  return "test2";
-};
 
 const ageIs = (date) => {
   let yearAge;
@@ -87,4 +80,19 @@ const dobIs = (age,startDate) => {
 
 };
 
-module.exports = { packageTest, packageTest2,ageIs,dobIs };
+
+const differentBetweenTowDate=(date1,date2)=>{
+  const dateTemp1 = new Date(date1);
+  const dateTemp2 = new Date(date2);
+  const diffTime = Math.abs(dateTemp2 - dateTemp1);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+
+  return {
+    milliseconds:diffTime,
+    days:diffDays
+  }
+}
+
+//PS I took help from open source documents and data
+
+module.exports = {differentBetweenTowDate,ageIs,dobIs };
