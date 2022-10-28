@@ -17,7 +17,7 @@ jobs:
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
         with:
-          node-version: 12
+          node-version: 15
           registry-url: https://registry.npmjs.org
       - name: 🚀 publish
         run: npm publish --access public
