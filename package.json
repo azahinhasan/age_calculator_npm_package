@@ -1,13 +1,13 @@
 {
   "name": "@azahinhasan/age-calculator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "age-calculator"
+    "calculator","date","age"
   ],
   "author": "Ashak Zahin Hasan <azahinhasan@gmail.com>",
   "license": "MIT",

@@ -1,12 +1,10 @@
-
 const ageIs = (date) => {
   let yearAge;
   let monthAge;
   let dateAge;
 
-  extraMsg = "";
   var now = new Date();
-  dateString = date.toString();
+  let dateString = date.toString();
 
   var yearNow = now.getYear();
   var monthNow = now.getMonth();
@@ -48,51 +46,47 @@ const ageIs = (date) => {
   };
 };
 
-
-const dobIs = (age,startDate) => {
-
+const dobIs = (age, startDate) => {
   const d = startDate || new Date();
 
   let tempDate = startDate || new Date();
-  tempDate.setDate(tempDate.getDate() - age.day);
-  tempDate.setMonth(tempDate.getMonth() - age.month);
-  tempDate.setFullYear(tempDate.getFullYear() - age.year);
 
-  if(age.day>=d.getDate()){
+  tempDate.setDate(tempDate.getDate() - (age.day||0));
+  tempDate.setMonth(tempDate.getMonth() - (age.month||0));
+  tempDate.setFullYear(tempDate.getFullYear() - (age.year||0));
+
+  if (age.day >= d.getDate()) {
     const tempMonth = tempDate.getMonth();
-    const tempYear=tempDate.getFullYear();
-    let tempDay=0;
-    console.log(tempMonth,'tempMonth')
-    if(tempMonth===1){
-      if(tempYear%4===0){
-        tempDay=1
-      }else{
-        tempDay=2
+    const tempYear = tempDate.getFullYear();
+    let tempDay = 0;
+    console.log(tempMonth, "tempMonth");
+    if (tempMonth === 1) {
+      if (tempYear % 4 === 0) {
+        tempDay = 1;
+      } else {
+        tempDay = 2;
       }
-    }
-    else if(tempMonth!==2 && tempMonth%2===0){
-      tempDay= -1;
+    } else if (tempMonth !== 2 && tempMonth % 2 === 0) {
+      tempDay = -1;
     }
     tempDate.setDate(tempDate.getDate() - tempDay);
   }
 
   return new Date(tempDate);
-
 };
 
-
-const differentBetweenTowDate=(date1,date2)=>{
+const differentBetweenTowDate = (date1, date2) => {
   const dateTemp1 = new Date(date1);
   const dateTemp2 = new Date(date2);
   const diffTime = Math.abs(dateTemp2 - dateTemp1);
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
   return {
-    milliseconds:diffTime,
-    days:diffDays
-  }
-}
+    milliseconds: diffTime,
+    days: diffDays,
+  };
+};
 
 //PS I took help from open source documents and data
 
-module.exports = {differentBetweenTowDate,ageIs,dobIs };
+module.exports = { differentBetweenTowDate, ageIs, dobIs };
