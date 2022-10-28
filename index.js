@@ -76,8 +76,8 @@ const dobIs = (age, startDate) => {
 };
 
 const differentBetweenTowDate = (date1, date2) => {
-  const dateTemp1 = new Date(date1);
-  const dateTemp2 = new Date(date2);
+  const dateTemp1 = new Date(date1||0) ;
+  const dateTemp2 = new Date(date2||0) ;
   const diffTime = Math.abs(dateTemp2 - dateTemp1);
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
