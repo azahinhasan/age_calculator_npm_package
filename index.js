@@ -1,20 +1,29 @@
+const formateDateMMDDYY = (date) => {
+
+  if(!date){return 0}
+  let dateString = date.toString();
+
+  var dob = new Date(
+    dateString.substring(6, 10), //year
+    dateString.substring(0, 2) - 1, //month
+    dateString.substring(3, 5) //day
+  );
+
+  return dob;
+};
+
 const ageIs = (date) => {
   let yearAge;
   let monthAge;
   let dateAge;
 
   var now = new Date();
-  let dateString = date.toString();
 
   var yearNow = now.getYear();
   var monthNow = now.getMonth();
   var dateNow = now.getDate();
 
-  var dob = new Date(
-    dateString.substring(6, 10),
-    dateString.substring(0, 2) - 1,
-    dateString.substring(3, 5)
-  );
+  var dob = formateDateMMDDYY(date);
 
   var yearDob = dob.getYear();
   var monthDob = dob.getMonth();
@@ -47,19 +56,16 @@ const ageIs = (date) => {
 };
 
 const dobIs = (age, startDate) => {
-
-
-  if(startDate && new Date(startDate)==='Invalid Date')
-    return 'Invalid Date'
-  else if(startDate)
-    startDate=new Date(startDate)
+  if (startDate && new Date(startDate) === "Invalid Date")
+    return "Invalid Date";
+  else if (startDate) startDate = formateDateMMDDYY(startDate);
   const d = startDate || new Date();
 
-  let tempDate =  startDate || new Date();
+  let tempDate = startDate || new Date();
 
-  tempDate.setDate(tempDate.getDate() - (age.day||0));
-  tempDate.setMonth(tempDate.getMonth() - (age.month||0));
-  tempDate.setFullYear(tempDate.getFullYear() - (age.year||0));
+  tempDate.setDate(tempDate.getDate() - (age.day || 0));
+  tempDate.setMonth(tempDate.getMonth() - (age.month || 0));
+  tempDate.setFullYear(tempDate.getFullYear() - (age.year || 0));
 
   if (age.day >= d.getDate()) {
     const tempMonth = tempDate.getMonth();
@@ -82,8 +88,9 @@ const dobIs = (age, startDate) => {
 };
 
 const differentBetweenTowDate = (date1, date2) => {
-  const dateTemp1 = new Date(date1||0) ;
-  const dateTemp2 = new Date(date2||0) ;
+  const dateTemp1 = formateDateMMDDYY(date1) || 0;
+  const dateTemp2 = formateDateMMDDYY(date2) || 0;
+  if (dateTemp1===0 || dateTemp2===0){return 'parameter is empty'}
   const diffTime = Math.abs(dateTemp2 - dateTemp1);
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
