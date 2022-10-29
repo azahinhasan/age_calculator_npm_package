@@ -47,9 +47,15 @@ const ageIs = (date) => {
 };
 
 const dobIs = (age, startDate) => {
+
+
+  if(startDate && new Date(startDate)==='Invalid Date')
+    return 'Invalid Date'
+  else if(startDate)
+    startDate=new Date(startDate)
   const d = startDate || new Date();
 
-  let tempDate = startDate || new Date();
+  let tempDate =  startDate || new Date();
 
   tempDate.setDate(tempDate.getDate() - (age.day||0));
   tempDate.setMonth(tempDate.getMonth() - (age.month||0));

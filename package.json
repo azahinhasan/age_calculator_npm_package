@@ -3,7 +3,7 @@
   "version": "1.0.9",
   "description": "",
   "main": "index.js",
-  "types": "./index.js",
+  "types": "index.js",
   "keywords": [
     "calculator",
     "date",
