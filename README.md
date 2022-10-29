@@ -1,4 +1,4 @@
-## By using of this package you can find out Age from DOB , DOB from age or difference between two date or DOB
+By using of this package you can find out Age from DOB , DOB from age or difference between two date or DOB
 
 ### Instruction
 
@@ -15,8 +15,13 @@ differentBetweenTowDate('05/05/2021','05/05/2020'); //{ milliseconds: 3153600000
 //OR
 
 const test = require('@azahinhasan/age-calculator')
-(test.ageIs('05/05/2021')
-test.dobIs({year:1,month:12,day:0})
+test.ageIs('05/05/2021')
+//can define count start date in dobIs. If you donn't send any date in 2nd parameter it will count from current date.
+test.dobIs({year:1,month:12,day:0},'11/17/2021')
+
+
+
+//P.S. package only allow <span style="color:red">MM/DD/YYYY (01/02/2022)</span> format date
 ```
 
 #### More information are coming.
