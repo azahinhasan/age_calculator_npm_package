@@ -1,45 +1,47 @@
-const formateDateMMDDYY = require("./formate_data_MMDDYY");
+const ageIs = (date, startDate) => {
+  if (!date || new Date(date).toString() == "Invalid Date")
+    return "Invalid DOB Date";
+  if (startDate && new Date(startDate).toString() == "Invalid Date")
+    return "Invalid Start Date Date";
 
-const ageIs = (date) => {
-  let yearAge;
-  let monthAge;
-  let dateAge;
+  const [month, day, year] = date.split("/").map(Number);
+  const birthDate = new Date(year, month - 1, day);
+  const today = startDate ? new Date(startDate) : new Date();
 
-  var now = new Date();
+  let ageYears = today.getFullYear() - birthDate.getFullYear();
+  let ageMonths = today.getMonth() - birthDate.getMonth();
+  let ageDays = today.getDate() - birthDate.getDate();
 
-  var yearNow = now.getYear();
-  var monthNow = now.getMonth();
-  var dateNow = now.getDate();
-
-  var dob = formateDateMMDDYY(date);
-
-  var yearDob = dob.getYear();
-  var monthDob = dob.getMonth();
-  var dateDob = dob.getDate();
-
-  yearAge = yearNow - yearDob;
-
-  if (monthNow >= monthDob) monthAge = monthNow - monthDob;
-  else {
-    yearAge--;
-    monthAge = 12 + monthNow - monthDob;
+  if (ageDays < 0) {
+    ageMonths--;
+    const lastMonth = new Date(year, month, 0);
+    ageDays += lastMonth.getDate();
   }
 
-  if (dateNow >= dateDob) dateAge = dateNow - dateDob;
-  else {
-    monthAge--;
-    dateAge = 31 + dateNow - dateDob;
-
-    if (monthAge < 0) {
-      monthAge = 11;
-      yearAge--;
-    }
+  if (
+    month === 2 &&
+    ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) &&
+    day > today.getDate()
+  ) {
+    // console.log(
+    //   month,
+    //   date,
+    //   day,
+    //   today.getDate(),
+    //   today.getMonth(),
+    //   (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
+    // );
+    ageDays += today.getMonth() < 4 ? 2 : 1;
+  }
+  if (ageMonths < 0) {
+    ageYears--;
+    ageMonths += 12;
   }
 
   return {
-    year: yearAge,
-    month: monthAge,
-    day: dateAge,
+    year: ageYears,
+    month: ageMonths,
+    day: ageDays,
   };
 };
 
