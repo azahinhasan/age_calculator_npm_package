@@ -26,14 +26,6 @@ const ageIs = (dob, startDate) => {
     ((dobYear % 4 === 0 && dobYear % 100 !== 0) || dobYear % 400 === 0) &&
     dobDay > today.getDate()
   ) {
-    // console.log(
-    //   dobMonth,
-    //   dob,
-    //   dobDay,
-    //   today.getDate(),
-    //   today.getMonth(),
-    //   (dobYear % 4 === 0 && dobYear % 100 !== 0) || dobYear % 400 === 0
-    // );
     ageDays += today.getMonth() < 4 ? 2 : 1;
   }
   if (ageMonths < 0) {
