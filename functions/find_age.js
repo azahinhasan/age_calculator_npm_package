@@ -7,7 +7,6 @@ const ageIs = (dob, startDate) => {
   const [dobMonth, dobDay, dobYear] = dob.split("/").map(Number);
 
   const birthDate = new Date(dob);
-  console.log();
 
   const today = startDate ? new Date(startDate) : new Date();
 
