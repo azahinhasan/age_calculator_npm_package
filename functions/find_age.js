@@ -3,7 +3,8 @@ const ageIs = (dob, startDate) => {
     return "Invalid DOB Date";
   if (startDate && new Date(startDate).toString() == "Invalid Date")
     return "Invalid Start Date Date";
-
+  if (new Date(dob) > new Date(startDate))
+    return "DOB must be bigger then start date";
   const [dobMonth, dobDay, dobYear] = dob.split("/").map(Number);
 
   const birthDate = new Date(dob);
