@@ -1,45 +1,24 @@
 
 
-You can use this package for converting or finding out Age from Date of Birth, Date of Birth from Age, or the difference between two Dates or Dates of Birth.
-
+This package provides easy-to-use utilities for calculating age from a date of birth and determining date of birth from a given age. Perfect for seamless date calculations in your projects.
+#
+### ✅Functions
+- `ageIs`:  This function takes two parameters, both in date format. The first parameter is required and represents the Date of Birth (DOB). The second parameter is optional and specifies the date from which the age will be calculated. If the second parameter is not provided, the function will calculate the age from the current date to the DOB. The function returns `the age in an object format`.
+- `dobIs`: This function takes two parameters. The first parameter is required and should be the age in object format. The second parameter is optional and represents the date from which the calculation will start. If the second parameter is not provided, the calculation will default to the current date. The function returns `the Date of Birth in date format`. 
 #
 
-###  ✅Instruction
-
-  
+###  ✍️Example
 
 ```Javascript
-import  {ageIs,dobIs,differentBetweenTowDate}  from  '@azahinhasan/age-calculator'
+const  {ageIs,dobIs} = require('@azahinhasan/age-calculator')
 
-//retrun the age : ageIs(<DOB>)
-ageIs('05/05/2021');  //{ year: 1, month: 5, day: 24 }
+ageIs('05/05/2021','05/05/2022') 
+ageIs('05/05/2021') 
 
-//retrun the Date : dobIs(<age in obj form>)
-//dobIs parameter obj can contain three types of key: month,day,year
-dobIs({month:12,day:0});  //2021-10-29T02:55:18.431Z
-
-//return defferent bettween two date or DOB
-differentBetweenTowDate('05/05/2021','05/05/2020');  //{ milliseconds: 31536000000, days: 365 }
-
-//OR
-
-const  test = require('@azahinhasan/age-calculator')
-
-test.ageIs('05/05/2021')
-
-//can define count start date in dobIs. If you donn't send any date in 2nd parameter it will count from current date.
-test.dobIs({year:1,month:12,day:0},'11/17/2021')
-
-  
-
-//🛑 P.S. package only allow MM/DD/YYYY (01/02/2022) format date
+dobIs({year:1,month:12,day:0},'11/17/2021')
+dobIs({year:1,day:0})
 
 ```
-
-#
-
-#
-
-  
+`🛑 P.S. please give valid date. Such as: MM/DD/YYYY or 2024-07-26T18:00:00.000Z.`
 
 ####  Feel free to [reach me ](https://aboutzahin.pages.dev)

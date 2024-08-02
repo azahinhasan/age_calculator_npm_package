@@ -1,13 +1,14 @@
 {
   "name": "@azahinhasan/age-calculator",
-  "version": "1.0.10",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "types": "index.js",
   "keywords": [
     "calculator",
     "date",
-    "age"
+    "age",
+    "date-different"
   ],
   "author": "Ashak Zahin Hasan <azahinhasan@gmail.com>",
   "license": "MIT",
