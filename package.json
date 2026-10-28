@@ -3,6 +3,13 @@
   "version": "1.2.2",
   "description": "This package provides easy-to-use utilities for calculating age from a date of birth and determining date of birth from a given age. Perfect for seamless date calculations in your projects.",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "functions/"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
   "private": false,
   "homepage":"https://github.com/azahinhasan/age_calculator_npm_package#readme",
   "keywords": [
@@ -17,5 +24,8 @@
     "start": "node index.js",
     "test": "node --test"
   },
-  "repository": "azahinhasan/age_calculator_npm_package"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azahinhasan/age_calculator_npm_package.git"
+  }
 }
