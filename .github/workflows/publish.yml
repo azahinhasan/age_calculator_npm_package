@@ -24,6 +24,6 @@ jobs:
             - name: 🧪 test
               run: npm test
             - name: 🚀 publish
-              run: npm publish --access public --provenance
+              run: npm publish --access public
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
